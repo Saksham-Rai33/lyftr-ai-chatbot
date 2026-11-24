@@ -1,0 +1,13 @@
+.env
+*.db
+*.db-wal
+*.db-shm
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+node_modules/
+dist/
+
+Lyftr_AI_Full_Stack_Assignment.pdf
