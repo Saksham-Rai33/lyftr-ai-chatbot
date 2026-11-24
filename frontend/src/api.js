@@ -42,3 +42,14 @@ export async function sendChat({ sessionId, message, systemPrompt, simulateFailu
   if (!res.ok) throw new Error(readableError(res.status, data?.detail));
   return data;
 }
+
+// Used for the status badge. Free-tier hosts can take up to a minute to wake, so allow a long wait.
+export async function checkHealth(signal) {
+  try {
+    const res = await fetch(`${API_URL}/health`, { signal });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
