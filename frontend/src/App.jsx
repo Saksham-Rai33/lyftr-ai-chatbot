@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { checkHealth, newSessionId, sendChat } from "./api.js";
 import Message from "./components/Message.jsx";
+import { LogoMark, Wordmark } from "./components/Logo.jsx";
 
 const FAILURE_PRESETS = [
   { label: "Off", value: "" },
@@ -122,15 +123,15 @@ export default function App() {
     <div className="app">
       <header className="topbar">
         <div className="brand">
-          <div className="logo" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12Z" />
-            </svg>
-          </div>
+          <LogoMark size={44} className="logo" />
           <div>
-            <h1>Lyftr Chat</h1>
-            <p className="muted">
-              Session <code data-testid="session-id">{sessionId}</code>
+            <Wordmark />
+            <p className="muted tagline">
+              <span>AI assistant</span>
+              <i className="sep" />
+              <span>
+                Session <code data-testid="session-id">{sessionId}</code>
+              </span>
             </p>
           </div>
         </div>
@@ -191,7 +192,7 @@ export default function App() {
       <main className="chat" data-testid="chat-log">
         {messages.length === 0 && (
           <div className="empty">
-            <div className="empty-logo" aria-hidden="true">✦</div>
+            <LogoMark size={64} className="empty-logo" />
             <h2>How can I help?</h2>
             <p className="muted">
               I remember this conversation. Every reply shows its source, model, latency and token usage.
