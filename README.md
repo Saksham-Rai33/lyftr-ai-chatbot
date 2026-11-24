@@ -152,7 +152,7 @@ In the UI, open "Session settings" to pick a failure simulation from a dropdown.
 
 ## 5. Setup Used
 
-- Editor / agent: Claude Code (CLI), model Claude Sonnet 5.5.
+- Editor / agent: Claude chat for guidance, VS Code.
 - LLM providers through LiteLLM: Groq (`groq/openai/gpt-oss-20b`) as `key_1` and Google Gemini as `key_2`.
 - Stack: Python 3.12, FastAPI, LiteLLM, SQLite, React 19 with Vite, Docker Compose.
 - Hosting: Render (backend, Docker) and Vercel (frontend).
