@@ -6,12 +6,14 @@ React + FastAPI + SQLite chatbot. LiteLLM provides the key pool with automatic f
 
 | | URL |
 |---|---|
-| Frontend | _TODO: Vercel URL_ |
-| Backend | _TODO: Render URL_ |
-| Backend health | _TODO: Render URL_/health |
-| Repository | _TODO: GitHub URL_ |
+| Frontend | https://lyftr-ai-chatbot-six.vercel.app |
+| Backend | https://lyftr-chatbot-api-yjc5.onrender.com |
+| Backend health | https://lyftr-chatbot-api-yjc5.onrender.com/health |
+| Repository | https://github.com/Saksham-Rai33/lyftr-ai-chatbot |
 
 The backend runs on Render's free tier, which sleeps when idle. The first request after a pause can take about 30 to 60 seconds. Open `/health` first to wake it.
+
+Render's free tier also has no persistent disk, so on the live backend the SQLite history and the in-memory cache reset when the service restarts or redeploys. With `make up`, history lives on a Docker volume and survives restarts.
 
 ## 2. Run locally
 
@@ -99,7 +101,7 @@ LiteLLM's built-in in-memory cache (`litellm.cache = Cache(type="local")`) is en
 
 ## 4. Verification
 
-Replace `$API` with `http://localhost:8000` or the live backend URL.
+Replace `$API` with `http://localhost:8000` or the live backend URL (`https://lyftr-chatbot-api-yjc5.onrender.com`).
 
 ```bash
 API=http://localhost:8000
